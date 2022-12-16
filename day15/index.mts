@@ -156,6 +156,9 @@ function main(): void {
 
     ranges = reduceRanges(ranges);
 
+    // Welp. This works because, for the given input, the beacon is not
+    // on the edge of the map. If it was, we'd have to check for ranges
+    // that are not adjacent to the edge of the map.
     if (ranges.length > 1) {
       const emptyRanges: Range[] = [];
 
