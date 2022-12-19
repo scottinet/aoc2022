@@ -1,4 +1,3 @@
-import { copyFile } from "fs";
 import * as toolbox from "../lib/toolbox.mjs";
 
 const FLOOR_LENGTH = 64;
