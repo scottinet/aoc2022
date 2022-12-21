@@ -52,11 +52,25 @@ export class OrderedSet<T extends Equatable> {
     return this.items;
   }
 
+  get(item: T): T | undefined {
+    return this.items.find((value) => value.equals(item));
+  }
+
   search(predicate: (value: T) => boolean): T[] {
     return this.items.filter((value) => predicate(value));
   }
 
+  find(predicate: (value: T) => boolean): T | undefined {
+    return this.items.find((value) => predicate(value));
+  }
+
   isEmpty(): boolean {
     return this.items.length === 0;
+  }
+
+  toString(): string {
+    return `OrderedSet(${this.items.length}) {\n${this.items
+      .map((i) => "\t" + i.toString())
+      .join(",\n")}\n}`;
   }
 }
